@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_tools)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_slideshow:
                         displayToast(getString(R.string.menu_slideshow));
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_tools:
+                        displayToast(getString(R.string.menu_tools));
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     default:
